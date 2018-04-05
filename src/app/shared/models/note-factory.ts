@@ -22,4 +22,13 @@ export class NoteFactory {
 
     return this.range;
   }
+
+  public getRandomNote(): Note {
+    if (this.range.length) {
+      const index = Math.floor(Math.random() * this.range.length);
+      return this.range[index];
+    }
+
+    return null;
+  }
 }

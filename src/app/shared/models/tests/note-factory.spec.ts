@@ -37,5 +37,14 @@ import { NoteFactory } from '../note-factory';
       notes = newFactory.getNotesInRange();
       expect(notes.length).toBe(0);
     });
+
+    it('should generate a random note within the range [head, tail] inclusive()', () => {
+      const notes: Note[] = noteFactory.getNotesInRange();
+
+      for (let i = 0; i < 50; i++) {
+        const note: Note = noteFactory.getRandomNote();
+        expect(notes).toContain(note);
+      }
+    });
   });
 }
